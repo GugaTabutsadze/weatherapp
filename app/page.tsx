@@ -24,26 +24,36 @@ export default function Home() {
   const [backgroundImage, setBackgroundImage] = useState<string>(""); // State for background image
 
   useEffect(() => {
+    const images = [
+      '/images/rainbg.jpg',
+      '/images/cloudybg.jpg',
+      '/images/mistbg.jpg',
+      '/images/snowbg.jpg',
+      '/images/sunnybg.jpg',
+      '/images/defaultbg.jpg'
+    ];
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
+
+  useEffect(() => {
     if (weatherDate && weatherDate.weather && weatherDate.weather.length > 0) {
       const weatherCondition = weatherDate.weather[0].main;
-      switch (weatherCondition) {
-        case "Rain":
-          setBackgroundImage("url('/images/rainbg.jpg')");
-          break;
-        case "Clouds":
-          setBackgroundImage("url('/images/cloudybg.jpg')");
-          break;
-          case "Mist":
-          setBackgroundImage("url('/images/mistbg.jpg')");
-          break;
-        case "Snow":
-          setBackgroundImage("url('/images/snowbg.jpg')");
-          break;
-        case "Clear":
-          setBackgroundImage("url('/images/sunnybg.jpg')");
-          break;
-        default:
-          setBackgroundImage("url('/images/defaultbg.jpg')");
+  
+      if (weatherCondition === "Rain") {
+        setBackgroundImage("url('/images/rainbg.jpg')");
+      } else if (weatherCondition === "Clouds") {
+        setBackgroundImage("url('/images/cloudybg.jpg')");
+      } else if (weatherCondition === "Mist") {
+        setBackgroundImage("url('/images/mistbg.jpg')");
+      } else if (weatherCondition === "Snow") {
+        setBackgroundImage("url('/images/snowbg.jpg')");
+      } else if (weatherCondition === "Clear") {
+        setBackgroundImage("url('/images/sunnybg.jpg')");
+      } else {
+        setBackgroundImage("url('/images/defaultbg.jpg')");
       }
     }
   }, [weatherDate]); // Depend on weatherDate to update background
