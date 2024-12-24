@@ -33,6 +33,9 @@ export default function Home() {
         case "Clouds":
           setBackgroundImage("url('/images/cloudybg.jpg')");
           break;
+          case "Mist":
+          setBackgroundImage("url('/images/mistbg.jpg')");
+          break;
         case "Snow":
           setBackgroundImage("url('/images/snowbg.jpg')");
           break;
