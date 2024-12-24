@@ -2,30 +2,29 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import WeatherDisplay from "../weatherdisplay/Weatherdisplay";
 
+// Define the complete types for the weather data from OpenWeather API
 interface WeatherData {
-  name: string;
+  name: string; // City name
+  weather: { main: string; description: string; icon: string }[]; // Weather description and icon
   main: {
     temp: number;
-    feels_like: number;
     humidity: number;
+    feels_like: number;
   };
   wind: {
     speed: number;
   };
-  weather: {
-    description: string;
-    icon: string;
-  }[];
 }
 
-interface WeatherDataProps {
+
+interface WeatherdataProps {
   inputValue: string;
   weatherDate: WeatherData | null;
   setWeatherDate: React.Dispatch<React.SetStateAction<WeatherData | null>>;
 }
 
-const Weatherdata: React.FC<WeatherDataProps> = ({ inputValue, weatherDate, setWeatherDate }) => {
-  const [debouncedInput, setDebouncedInput] = useState(inputValue);
+const Weatherdata: React.FC<WeatherdataProps> = ({ inputValue, weatherDate, setWeatherDate }) => {
+  const [debouncedInput, setDebouncedInput] = useState<string>(inputValue);
   const api_Key = "11e38e2856fa6fddd1171692c9e6b1fd";
 
   // Fetch Tbilisi's weather immediately

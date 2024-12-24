@@ -1,7 +1,10 @@
+import React from "react";
 import Wicon from "../weathericonupdate/Wicon";
 
+// Define types for the weather data
 interface WeatherData {
   name: string;
+  weather: { main: string; description: string; icon: string }[];
   main: {
     temp: number;
     feels_like: number;
@@ -10,10 +13,6 @@ interface WeatherData {
   wind: {
     speed: number;
   };
-  weather: {
-    description: string;
-    icon: string;
-  }[];
 }
 
 interface WeatherDisplayProps {
