@@ -13,19 +13,19 @@ const Inputsearch: React.FC<InputSearchProps> = ({ inputValue, setInputValue }) 
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full sm:bg-white sm:bg-opacity-60 sm:rounded-2xl">
       {/* Desktop View */}
-      <div className="hidden relative pb-10 max-w-[1500px] w-full sm:block">
+      <div className="hidden relative p-4 max-w-[1500px] w-full sm:block">
         <input
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)} // Update the input value
           placeholder="Enter City"
-          className="bg-transparent border border-black text-blue-900 px-6 py-3 rounded-2xl font-serif font-semibold
+          className="bg-transparent border border-black text-black px-6 py-3 rounded-2xl font-serif font-bold
           max-w-[500px] w-full outline-none placeholder-blue-950 focus:placeholder:opacity-0"
           type="text"
         />
         <img
-          className="absolute cursor-pointer right-4 top-[15px]"
+          className="absolute cursor-pointer right-10 top-[28px]"
           width={25}
           height={25}
           src="/images/search.png"
@@ -47,8 +47,8 @@ const Inputsearch: React.FC<InputSearchProps> = ({ inputValue, setInputValue }) 
           <input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)} // Update the input value
-            className="bg-transparent border border-black text-blue-900 py-1 px-6 font-serif font-semibold
-            rounded-2xl outline-none placeholder-blue-950 transition-all duration-1000 ease-in-out"
+            className="bg-transparent border border-black text-black py-1 px-6 font-serif font-bold
+            rounded-2xl outline-none placeholder-black transition-all duration-1000 ease-in-out"
             style={{
               width: inputOpen ? "300px" : "0", // Animate the width
               opacity: inputOpen ? 1 : 0, // Optionally animate the opacity as well

@@ -27,7 +27,7 @@ const Wicon = ({ iconCode }: { iconCode: string }) => {
   // Get the icon URL based on the icon code, fallback to sun if not found
   const iconUrl = iconMap[iconCode];
 
-  return <img width={50} height={50} src={iconUrl} alt="weather icon" />;
+  return <img width={100} height={100} src={iconUrl} alt="weather icon" />;
 };
 
 export default Wicon;

@@ -14,7 +14,7 @@ const CurrentDate = () => {
 
   return (
     <div className='max-w-[400px] sm:flex flex-col items-center justify-center p-6 font-mono
-         font-semibold text-gray-600 bg-white bg-opacity-20 rounded-2xl '>
+         font-bold  text-black bg-white bg-opacity-50 rounded-2xl '>
       {time && (
         <div className='flex flex-col items-center'>
           <p className=''>{time.toLocaleTimeString([], {hour12: false})}</p>
